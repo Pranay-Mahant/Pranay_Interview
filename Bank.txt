@@ -1,0 +1,42 @@
+
+class Bank:
+    def __init__(self,name,mob,bal):
+     self.name = name
+     self.mob = mob
+     self.bal = bal
+
+    def balance(self):
+        print(f"Total bal:{self.bal}\n{'='*50}")
+
+    def deposit(self,amount):
+        print(f"current bal:{self.bal}\n"
+              f"deposit amount:{amount}")
+        self.bal += amount
+        print(f"Total balance:{self.bal}\n{'='*50}")
+
+    def withdraw(self,amount):
+        print(f"current bal:{self.bal}\n"
+              f"withdraw amount:{amount}")
+        self.bal -= amount
+        print(f"Total balance:{self.bal}\n{'=' * 50}")
+
+    def transfer(self,cust,amount):
+        print(f"current bal:{self.bal}\n")
+        self.bal -= amount
+        self.amount += amount
+        print(f"Amount transfered to {cust.name}:{amount}\n"
+              f"Total balance:{self.bal}\n"
+              f"{'=' * 50}")
+
+
+class Sbi(Bank):
+    b_name='SBI'
+
+cus1=Sbi("Pranay",9370893727,10000)
+cus2=Sbi("Poo",9370893777,5000)
+cus3=Sbi("Pran",9370893737,1000)
+cus1.balance()
+cus1.deposit(5100)
+cus1.withdraw(500)
+cus1.transfer(cus2,500)
+print(cus1.b_name)
